@@ -28,3 +28,5 @@ DELETE /node/{UUID} or /tournament/{ID}/node/{UUID}
 
 # Metadata
 All data (exept for uuid, created_at, etc.) for matches, nodes and teams stores in jsonb
+
+<!-- TODO: Add WebSocket support -->
