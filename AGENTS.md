@@ -519,4 +519,58 @@ jobs:
         flake8 src/
 ```
 
-<!-- TODO: Conventional Commits policy -->
+## Conventional Commits Policy
+
+This project follows the Conventional Commits specification for all commit messages to ensure consistent and automated changelog generation.
+
+### Commit Message Format
+
+Each commit message consists of a **type**, an optional **scope**, and a **subject**:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Commit Types
+
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests or correcting existing tests
+- **build**: Changes that affect the build system or external dependencies
+- **ci**: Changes to our CI configuration files and scripts
+- **chore**: Other changes that don't modify src or test files
+
+### Examples
+
+```text
+feat: add tournament creation endpoint
+
+fix(api): resolve tournament retrieval timeout issue
+
+docs: update API documentation for tournament routes
+
+refactor: simplify tournament bracket generation algorithm
+
+test: add unit tests for tournament service
+
+chore: update dependencies to latest versions
+```
+
+### Best Practices
+
+- Use the present tense ("add" not "added" or "adds")
+- Use lowercase for the description
+- Do not capitalize the first letter
+- No dot (.) at the end
+- A scope may be provided in parentheses after the type
+- A breaking change should be indicated with `!` after the type/scope
+
+This policy enables automatic semantic versioning and changelog generation through tools like semantic-release.
