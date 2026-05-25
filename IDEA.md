@@ -29,4 +29,18 @@ DELETE /node/{UUID} or /tournament/{ID}/node/{UUID}
 # Metadata
 All data (exept for uuid, created_at, etc.) for matches, nodes and teams stores in jsonb
 
-<!-- TODO: Add WebSocket support -->
+# WebSocket
+**Endpoint:** `wss://<host>/ws`
+
+**Client to Server:**
+- `tournament.subscribe` / `tournament.unsubscribe`
+- `match.subscribe` / `match.unsubscribe` / `match.get`
+- `node.subscribe` / `node.unsubscribe` / `node.get`
+
+**Server to Client:**
+- `tournament.snapshot` / `tournament.updated`
+- `match.snapshot` / `match.updated` / `match.created` / `match.deleted` / `match.response`
+- `node.snapshot` / `node.updated` / `node.created` / `node.deleted` / `node.response`
+- `error`
+
+**Convention:** `*.subscribe` triggers an immediate `*.snapshot`, followed by `*.updated` pushes on changes. All messages include an `id` field for request-response correlation.
