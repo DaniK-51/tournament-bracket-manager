@@ -574,3 +574,5 @@ chore: update dependencies to latest versions
 - A breaking change should be indicated with `!` after the type/scope
 
 This policy enables automatic semantic versioning and changelog generation through tools like semantic-release.
+
+**Important**: The "Closes #123" footer should only be used when a commit actually resolves an existing issue. If it is not obvious whether an issue is being closed, do not include the "Closes" reference in the commit message.
